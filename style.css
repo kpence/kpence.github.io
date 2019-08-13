@@ -58,7 +58,7 @@ p{
   margin-top: 220px;
 }
 
-form#mc_embed_signup{
+form#mc-embedded-subscribe-form.validate{
   padding: 0 0 0 0;
   text-align: center;
 }
