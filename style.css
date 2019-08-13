@@ -30,7 +30,6 @@ input#mc-embedded-subscribe.button.btn.btn-primary{
   height: 50px;
   font-size: 15px;
   border-style: none;
-  align-items: center;
 }
 
 
@@ -61,4 +60,8 @@ p{
 form#mc-embedded-subscribe-form.validate{
   padding: 0 0 0 0;
   text-align: center;
+}
+
+input#mc-embedded-subscribe.button.btn.btn-primary{
+  display: inline-block;
 }
