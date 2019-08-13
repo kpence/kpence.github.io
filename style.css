@@ -33,7 +33,7 @@ input#mc-embedded-subscribe.button.btn.btn-primary{
   border-style: none;
 }
 
-#mc_embed_signup{
+form#mc_embed_signup{
   display: inline-block;
 }
 
