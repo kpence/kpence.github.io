@@ -21,7 +21,7 @@ body{
   background-size: cover;
 }
 
-.btn-primary{
+#mc-embedded-subscribe.btn-primary{
   margin-top: 40px;
   border-radius: 30px;
   background-color: orange;
@@ -33,16 +33,17 @@ body{
 }
 
 
-.btn-primary:hover, .btn-primary:focus, .btn-primary:active{
+/*#mc-embedded-subscribe(.btn-primary:hover, .btn-primary:focus, .btn-primary:active){*/
+#mc-embedded-subscribe.btn-primary:hover, #mc-embedded-subscribe.btn-primary:focus, #mc-embedded-subscribe.btn-primary:active{
   box-shadow: 0px 0px 2px red;
   background-color: orange;
 }
 
-.btn-primary:hover{
+#mc-embedded-subscribe.btn-primary:hover{
   background-color: #dc5353;
 }
 
-.btn-primary{
+#mc-embedded-subscribe.btn-primary{
   box-shadow: red;
 }
 
