@@ -21,7 +21,7 @@ body{
   background-size: cover;
 }
 
-input#mc-embedded-subscribe.button.btn.btn-primary{
+input#mc-embedded-subscribe.button.btn{
   display: inline-block;
   margin-top: 40px;
   border-radius: 30px;
@@ -40,17 +40,16 @@ form#mc_embed_signup{
 }
 
 
-/*#mc-embedded-subscribe(.btn-primary:hover, .btn-primary:focus, .btn-primary:active){*/
-input#mc-embedded-subscribe.button.btn.btn-primary:hover,input#mc-embedded-subscribe.button.btn.btn-primary:focus,input#mc-embedded-subscribe.button.btn.btn-primary:active{
+input#mc-embedded-subscribe.button.btn:hover,input#mc-embedded-subscribe.button.btn:focus,input#mc-embedded-subscribe.button.btn:active{
   box-shadow: 0px 0px 2px red;
   background-color: orange;
 }
 
-input#mc-embedded-subscribe.button.btn.btn-primary:hover{
+input#mc-embedded-subscribe.button.btn:hover{
   background-color: #dc5353;
 }
 
-input#mc-embedded-subscribe.button.btn.btn-primary{
+input#mc-embedded-subscribe.button.btn{
   box-shadow: red;
 }
 
