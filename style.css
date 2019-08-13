@@ -22,6 +22,7 @@ body{
 }
 
 input#mc-embedded-subscribe.button.btn.btn-primary{
+  display: inline-block;
   margin-top: 40px;
   border-radius: 30px;
   background-color: orange;
@@ -60,8 +61,4 @@ p{
 form#mc-embedded-subscribe-form.validate{
   padding: 0 0 0 0;
   text-align: center;
-}
-
-input#mc-embedded-subscribe.button.btn.btn-primary{
-  display: inline-block;
 }
