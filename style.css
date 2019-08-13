@@ -33,6 +33,10 @@ input#mc-embedded-subscribe.button.btn.btn-primary{
   border-style: none;
 }
 
+#mc_embed_signup{
+  display: inline-block;
+}
+
 
 /*#mc-embedded-subscribe(.btn-primary:hover, .btn-primary:focus, .btn-primary:active){*/
 input#mc-embedded-subscribe.button.btn.btn-primary:hover,input#mc-embedded-subscribe.button.btn.btn-primary:focus,input#mc-embedded-subscribe.button.btn.btn-primary:active{
