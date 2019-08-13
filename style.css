@@ -31,6 +31,7 @@ input#mc-embedded-subscribe.button.btn.btn-primary{
   height: 50px;
   font-size: 15px;
   border-style: none;
+  transition: all 0.23s ease-in-out 0s;
   transition-property: background-color, box-shadow;
 }
 
