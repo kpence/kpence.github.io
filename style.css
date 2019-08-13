@@ -53,6 +53,12 @@ input#mc-embedded-subscribe.button.btn.btn-primary{
   width: 96px;
   margin: 180px auto 0 auto;
 }
+
 p{
   margin-top: 220px;
+}
+
+form#mc_embed_signup{
+  padding: 0 0;
+  text-align: center;
 }
