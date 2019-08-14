@@ -20,9 +20,6 @@ body{
   background-size: cover;
 }
 
-@media only screen and (max-width: 960px) {
-}
-
 input#mc-embedded-subscribe.button.btn{
   display: inline-block;
   margin-top: 40px;
