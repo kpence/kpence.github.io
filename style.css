@@ -57,12 +57,13 @@ input#mc-embedded-subscribe.button.btn{
 
 .line{
   border-top: 1px solid orange;
+  box-shadow: 0 0 1px 1px orange;
   width: 96px;
   margin: 180px auto 0 auto;
 }
 
 p{
-  margin-top: 220px;
+  padding-top: 220px;
 }
 
 form#mc-embedded-subscribe-form.validate{
