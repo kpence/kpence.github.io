@@ -1,10 +1,12 @@
 html,
 body{
-  width: 100vw;
   margin: 0;
   padding: 0;
 }
 
+.fit{
+  width:100%;
+}
 .zone{
     color:#FFF;
     font-size:1.35em;
@@ -21,7 +23,7 @@ body{
 .sticky{
   position: fixed;
   top: 0;
-  width: 100vw;
+  width: 100%;
 }
 nav{
   border-bottom-left-radius:4px;
