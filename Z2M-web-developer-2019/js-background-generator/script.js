@@ -43,9 +43,4 @@ random.addEventListener("click", randomize);
 color1.value = "#ff0000";
 color2.value = "#ffff00";
 
-css.textContent = 
-	"linear-gradient(to right, " 
-	+ color1.value 
-	+ ", " 
-	+ color2.value 
-	+ ")";
+css.textContent = "linear-gradient(to right, rgb(255, 0, 0), rgb(255, 255, 0));";
