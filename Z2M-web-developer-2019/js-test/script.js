@@ -4,22 +4,22 @@ var ul = document.querySelector("ul");
 var lis = document.getElementsByTagName("li");
 
 function inputLength() {
-	return input.value.length;
+  return input.value.length;
 }
 
 function createListElement() {
-	var li = document.createElement("li");
-	li.appendChild(document.createTextNode(input.value));
-	ul.appendChild(li);
-	input.value = "";
+  var li = document.createElement("li");
+  li.appendChild(document.createTextNode(input.value));
+  ul.appendChild(li);
+  input.value = "";
   li.addEventListener("click",toggleDoneAfterClick);
   addDeleteButtonToListElement(li);
 }
 
 function addListAfterClick() {
-	if (inputLength() > 0) {
-		createListElement();
-	}
+  if (inputLength() > 0) {
+    createListElement();
+  }
 }
 
 function removeListElement(event) {
@@ -37,9 +37,9 @@ function addDeleteButtonToListElement(li) {
 }
 
 function addListAfterKeypress(event) {
-	if (inputLength() > 0 && event.keyCode === 13) {
-		createListElement();
-	}
+  if (inputLength() > 0 && event.keyCode === 13) {
+    createListElement();
+  }
 }
 
 function toggleDoneAfterClick(event) {
@@ -47,9 +47,7 @@ function toggleDoneAfterClick(event) {
 }
 
 button.addEventListener("click", addListAfterClick);
-
 input.addEventListener("keypress", addListAfterKeypress);
-
 for (let li of lis) {
   li.addEventListener("click",toggleDoneAfterClick);
   addDeleteButtonToListElement(li);
