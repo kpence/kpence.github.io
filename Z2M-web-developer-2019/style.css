@@ -1,0 +1,72 @@
+body,
+html{
+  margin: 0 0;
+  padding: 0 0;
+}
+
+body{
+  background-color: black;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 28px;
+  text-align: center;
+}
+
+/*.row {
+  max-height: 100%;
+}*/
+.bgimg{
+  background-image: url("header.jpg");
+  background-position:center;
+  height: 100vh;
+  background-size: cover;
+}
+
+button#mc-embedded-subscribe.btn{
+  background-color: orange;
+  display: inline-block;
+  margin-top: 40px;
+  border-radius: 30px;
+  color: white;
+  width: 192px;
+  height: 50px;
+  font-size: 15px;
+  border-style: none;
+  transition: all 0.23s ease-in-out 0s;
+  transition-property: background-color, box-shadow;
+}
+
+form#mc_embed_signup{
+  display: inline-block;
+}
+
+
+button#mc-embedded-subscribe.btn:hover,button#mc-embedded-subscribe.btn:focus,button#mc-embedded-subscribe.btn:active{
+  box-shadow: 0px 0px 2px red;
+  background-color: orange;
+}
+
+button#mc-embedded-subscribe.btn:hover{
+  background-color: #dc5353;
+}
+
+button#mc-embedded-subscribe.btn{
+  box-shadow: red;
+}
+
+.line{
+  border-top: 1px solid orange;
+  box-shadow: 0 0 1px 1px orange;
+  width: 96px;
+  margin: 180px auto 0 auto;
+}
+
+p{
+  padding-top: 220px;
+  margin: 0 0;
+}
+
+form#mc-embedded-subscribe-form.validate{
+  padding: 0 0 0 0;
+  text-align: center;
+}
