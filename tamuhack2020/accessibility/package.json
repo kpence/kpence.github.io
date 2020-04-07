@@ -1,6 +1,7 @@
 {
   "name": "accessibility",
   "version": "0.1.0",
+  "homepage": "https://kpence.github.io/transit-trip-planner",
   "private": true,
   "dependencies": {
     "body-parser": "^1.19.0",
@@ -8,6 +9,7 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "forever-monitor": "^2.0.0",
+    "gh-pages": "^2.2.0",
     "leaflet": "^1.6.0",
     "mongodb": "^3.5.2",
     "mongoose": "^5.8.9",
