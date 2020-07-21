@@ -1,5 +1,6 @@
 ''' helpers.py
 '''
+import numpy as np
 
 # Helper function to turn dataframes to images
 def df2images(df):
