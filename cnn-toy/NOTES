@@ -1,0 +1,68 @@
+
+The full CNN structure:
+  I (28x28)
+  C1 (6@14x14)
+  C2 (16@5x5)
+  F1 (120) -- Fully connected layer
+  F2 (84) -- Fully connected layer
+  R (10)
+  GT -- Ground truth (example)
+
+
+Let F1 be the 10 input channel fully connected layer.
+
+Loss = (R.output_1 - GT_1)**2 + ... + (R.output_10 - GT_10)**2
+
+R.output = map_{j in [1..10]} (sum_{i in [1..84]}( F2.output_i*R_{i,j}) )
+
+F2.output = map_{j in [1..84]} (sum_{i in [1..120]}( F1.output_i*F2_{i,j}) )
+
+F1.output = map_{j in [1..120]} (sum_{i in <Every Pixel of every C2.output>}( <i'th Pixel of every C2.output>*F1_{i,j}) )
+
+C2.output = for each of the 16 channels: 6 kernels that convolve with each of the pooled feature maps from the C1 layer and are added together.
+C2.output = map_{i in [1..16]}( sum_{j in [1..6]}( Convolve(C2_{i,j}, C1.output_j) ) )
+
+C1.output = 6 kernels that convole with the Image input producing 6 pooled features maps.
+C1.output = map_{i in [1..6]}( Convolve(C1_i, I) )
+
+# Step 1, find the gradient for d(Loss, R)
+
+d(Loss, R) = d(Loss, R.output) * d(R.output, R)
+d(Loss, R.output) = sum_{i in [1..10]}( 2*GT_i )
+d(R.output, R) = map_{j in [1..10]} (sum_{i in [1..84]}( F2.output_i ) )
+
+
+# Step 2, find the gradient for d(Loss, F2)
+d(Loss, F2) = d(Loss, F2.output) * d(F2.output, F2)
+d(F2.output, F2) = map_{j in [1..84]} (sum_{i in [1..120]}( F1.output_i ) )
+d(Loss, F2.output) = d(Loss, R.output) * d(R.output, F2.output)
+d(R.output, F2.output) = map_{j in [1..10]} (sum_{i in [1..84]}( R_{i,j}) )
+
+# Step 3, find the gradient for d(Loss, F1)
+d(Loss, F1) = d(Loss, F1.output) * d(F1.output, F1)
+d(F1.output, F1) = map_{j in [1..120]} (sum_{i in <Every Pixel of every C2.output>}( <i'th Pixel of every C2.output> ) )
+d(Loss, F1.output) = d(Loss, F2.output) * d(F2.output, F1.output)
+d(F2.output, F1.output) = map_{j in [1..84]} (sum_{i in [1..120]}( F2_{i,j}) )
+
+# Step 4, find the gradient for d(Loss, C2)
+for each i (one for each input channel from C1):
+  d(Loss, C2_i) = Convolve(C1.output_i, d(Loss, C2.output))
+
+#d(Loss, C2) = d(Loss, C2.output) * d(C2.output, C2)
+#   -- I need to get the Loss with respect to each different filter.
+#d(C2.output, C2) = map_{i in [1..16]}( sum_{j in [1..6]}( C1.output_j) )  -- This seems like I have a wrong assumption about how the back prop should work here
+#d(Loss, C2.output) = d(Loss, F1.output) * d(F1.output, C2.output)
+#d(F1.output, C2.output) = map_{j in [1..120]} (sum_{i in <Every Pixel of C2.output>}( F1_{i,j}) )
+
+# Step 5, find the gradient for d(Loss, C1)
+
+-- I'm stopping here because I'm not sure if I'm doing this correctly.
+
+-- d(Loss, C1.output) = FullConvolve(Flipped(C2), C1.output)
+----d(C1.output, C1) = map_{i in [1..6]}( Convolve(C1_i, I) )
+  -- Now it gets complicated because for finding the outputs of the previous layers of a Convolutional Layer
+      -- you need to get the "full convolution of double flipped filter F_i with d(L/ C_q.output) summed for each input channel's filter"
+
+
+-- Just R_1
+-- d(R_1(F2), F2) = sum_{i in [1..84]}( R_{i,1} )
